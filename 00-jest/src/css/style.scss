@@ -1,0 +1,51 @@
+body {
+  font-family: Helvetica, Verdana, Arial, "微軟正黑體", "Microsoft JhengHei", "儷黑 Pro", "LiHei Pro", sans-serif;
+}
+
+section {
+  border: 2px solid #bdc3c7;
+  margin: 10px 0;
+  padding: 2.4rem 1rem 1rem;
+  border-radius: 8px;
+  position: relative;
+}
+
+section[data-name]::before {
+  z-index: 1;
+  content: attr(data-name);
+  pointer-events: none;
+  border-radius: .25rem;
+  padding: 0.2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: white;
+  background-color: #27ae60;
+  font-size: 20px;
+}
+
+$COLORS: #3498db,#9b59b6,#e67e22,#34495e;
+
+@each $color in $COLORS {
+  $i: index($COLORS, $color);
+  section[data-name].style-#{$i}::before {
+    background-color: $color;
+  }
+}
+
+.my-btn {
+  border: 1px solid black;
+  background-color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 6px 24px;
+  transition: all 0.2s;
+  border-radius: 30px;
+  cursor: pointer;
+}
+  .my-btn:hover {
+    background-color: #e3e3e3;
+  }
+  .my-btn:active {
+    opacity: 0.75;
+  }
