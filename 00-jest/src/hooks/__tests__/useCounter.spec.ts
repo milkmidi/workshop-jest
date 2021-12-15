@@ -13,9 +13,14 @@ describe('useCounter', () => {
   });
 
   test('should reset counter to updated initial value', () => {
-    const { result, rerender } = renderHook(({ initialValue }) => useCounter(initialValue), {
-      initialProps: { initialValue: 0 },
-    });
+    const { result, rerender } = renderHook(
+      ({ initialValue }) => {
+        return useCounter(initialValue);
+      },
+      {
+        initialProps: { initialValue: 0 },
+      },
+    );
 
     rerender({ initialValue: 10 });
     act(() => {

@@ -1,16 +1,12 @@
-export const isDateBetweenStartEnd = (
-  startDate?: number | string,
-  endDate?: number | string,
-  dateNow = Date.now(),
-): boolean => {
+export const isDateBetweenStartEnd = (startDate?: string, endDate?: string, dateNow = Date.now()): boolean => {
   let isStartDateValidate = false;
   if (startDate) {
-    isStartDateValidate = new Date(startDate).getTime() < dateNow;
+    isStartDateValidate = +new Date(startDate) < dateNow;
   }
 
   let isEndDateValidate = false;
   if (endDate) {
-    isEndDateValidate = new Date(endDate).getTime() > dateNow;
+    isEndDateValidate = +new Date(endDate) > dateNow;
   }
   return isStartDateValidate && isEndDateValidate;
 };

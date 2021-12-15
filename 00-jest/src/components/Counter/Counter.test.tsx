@@ -1,10 +1,16 @@
 import React from 'react';
-import { render, fireEvent, cleanup } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 
 import Counter from '.';
 
-// 每次測試後將 render 的 DOM 清空
-afterEach(cleanup);
+// https://testing-library.com/docs/react-testing-library/api#cleanup
+/* 
+  Please note that this is done automatically if the testing framework you're
+  using supports the afterEach global and it is injected to your testing environment
+  (like mocha, Jest, and Jasmine). If not, you will need to do manual cleanups after each test.
+ */
+// 每次測試後將 render 的 DOM 清空, Jest 不用加
+// afterEach(cleanup);
 
 describe('<Counter />', () => {
   test('should render correct', async () => {

@@ -2,7 +2,7 @@ import { isDateBetweenStartEnd, filterInvalidDate } from '../date-utils';
 
 describe('#date-utils ', () => {
   test('isDateBetweenStartEnd', () => {
-    const dateNow = new Date('2021/08/01').getTime();
+    const dateNow = +new Date('2021/08/01');
     expect(isDateBetweenStartEnd('2021/01/01', '2021/12/01', dateNow)).toBeTruthy();
     expect(isDateBetweenStartEnd('2021/12/01', '2021/12/31', dateNow)).toBeFalsy();
     expect(isDateBetweenStartEnd('2021/01/01', '2021/01/31', dateNow)).toBeFalsy();
