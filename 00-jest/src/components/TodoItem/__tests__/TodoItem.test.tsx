@@ -1,6 +1,6 @@
 import { render, fireEvent, cleanup } from '@testing-library/react';
 
-import TodoItem from '.';
+import TodoItem from '..';
 
 describe('<TodoItem />', () => {
   afterEach(cleanup);

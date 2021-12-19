@@ -1,6 +1,6 @@
 import { render, fireEvent, cleanup } from '@testing-library/react';
 
-import TodoForm from '.';
+import TodoForm from '..';
 
 describe('Test <TodoForm />', () => {
   afterEach(cleanup);

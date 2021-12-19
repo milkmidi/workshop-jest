@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 
-import Counter from '.';
+import Counter from '..';
 
 // https://testing-library.com/docs/react-testing-library/api#cleanup
 /* 
