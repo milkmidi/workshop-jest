@@ -1,20 +1,10 @@
 export const isDateBetweenStartEnd = (startDate?: string, endDate?: string, dateNow = Date.now()): boolean => {
-  let isStartDateValidate = false;
-  if (startDate) {
-    isStartDateValidate = +new Date(startDate) < dateNow;
-  }
-
-  let isEndDateValidate = false;
-  if (endDate) {
-    isEndDateValidate = +new Date(endDate) > dateNow;
-  }
-  return isStartDateValidate && isEndDateValidate;
+  // TODO
+  return false;
 };
 
-type StartDate = {
+type StartDateAndEndDate = {
   startDate: string;
-};
-type StartDateAndEndDate = StartDate & {
   endDate?: string;
 };
 export const filterInvalidDate = <T extends StartDateAndEndDate = StartDateAndEndDate>(

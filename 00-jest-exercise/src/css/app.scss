@@ -1,0 +1,77 @@
+@import './style';
+
+html {
+  font-size: 130%;
+}
+.todo-list{
+  border-radius: 5px;
+}
+.todo-list>h1{
+  text-align: center;
+  margin: 8px 0 12px;
+  padding-bottom: 4px;
+  font-size: 28px;
+  font-weight: normal;
+  color: #68d;
+  border-bottom: 1px solid #ddd;
+}
+
+
+.todo-form input{
+  width: 100%;
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: 'Microsoft JhengHei';
+  color: #336;
+}
+
+@keyframes show{
+  from{
+    opacity:0;
+    transform: translateY(-50px);
+  }
+  to{
+    opacity:1;
+    transform: none;
+  }
+}
+
+.todo-items{
+  padding-left: 0;
+  list-style: none;
+}
+.todo-item{
+  cursor: pointer;
+  position: relative;
+  padding: 12px;
+  font-size: 16px;
+  color: #333;
+  transition: background-color .3s;
+  animation: show .3s ease-in-out;
+}
+.todo-item:hover{
+  background-color: #e5e5e5;
+}
+.todo-item__btn{
+  position: absolute;
+  right: 0;
+}
+.todo-item:before{
+  vertical-align: top;
+  margin-right: 10px;
+  width: 24px;
+  height: 24px;
+  content: '';
+  display: inline-block;
+  background-image: url('~img/checkbox.png')
+}
+.todo-item.done:before{
+  background-position: left 24px;
+}
+.todo-item.done{
+  text-decoration: line-through;
+  color: #888;
+  background-color: #f6f6f6;
+}

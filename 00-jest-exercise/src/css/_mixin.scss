@@ -1,0 +1,22 @@
+// https://tailwindcss.com/docs/responsive-design
+
+/* Small (sm) */
+@mixin sm {
+  @media (min-width: 640px) { @content;  }
+}
+/* Medium (md) */
+@mixin md {
+  @media (min-width: 768px) { @content; }
+}
+/* Large (lg) */
+@mixin lg {
+  @media (min-width: 1024px) { @content; }
+}
+/* Extra Large (xl) */
+@mixin xl {
+  @media (min-width: 1280px) { @content; }
+}
+/* Extra Large (2xl) */
+@mixin xl2 {
+  @media (min-width: 1536px) { @content; }
+}

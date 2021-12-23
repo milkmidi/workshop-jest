@@ -3,7 +3,7 @@ import { mocked } from 'ts-jest/utils';
 import { render, waitFor, cleanup } from '@testing-library/react';
 
 import { fetchData as fetchDataDep } from '@/services/api';
-import DisplayData from '.';
+import DisplayData from '..';
 
 const fetchData = mocked(fetchDataDep, true);
 

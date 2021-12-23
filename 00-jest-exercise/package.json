@@ -6,7 +6,7 @@
     "start": "cross-env NODE_ENV=development webpack serve",
     "build": "rimraf ./dist && cross-env NODE_ENV=production webpack",
     "test": "cross-env APP_ENV=test jest",
-    "test:watch": "cross-env APP_ENV=jest test --watch"
+    "test:watch": "cross-env APP_ENV=test jest --watch"
   },
   "dependencies": {
     "axios": "^0.24.0",
