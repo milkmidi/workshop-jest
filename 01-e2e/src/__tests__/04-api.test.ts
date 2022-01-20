@@ -7,8 +7,3 @@ test("I'm healthy", async ({ request }) => {
   expect(result.ok()).toBeTruthy();
   expect(message).toBe("I'm healthy");
 });
-
-test('/api/bigcommerce/country', async ({ request }) => {
-  const result = await request.get(`https://www.positivegrid.com/api/bigcommerce/country`);
-  // TODO
-});
