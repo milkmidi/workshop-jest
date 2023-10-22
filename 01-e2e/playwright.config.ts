@@ -1,30 +1,22 @@
-import { PlaywrightTestConfig, devices } from '@playwright/test';
+import { defineConfig, devices } from '@playwright/test';
 
-const config: PlaywrightTestConfig = {
-  forbidOnly: !!process.env.CI,
+// https://playwright.dev/docs/ci
+// https://playwright.dev/docs/test-configuration
+export default defineConfig({
   retries: process.env.CI ? 2 : 0,
-  timeout: 60 * 1000,
+  timeout: 30 * 1000, // Each test is given 30 seconds.
   use: {
-    // channel:'chrome',
-    trace: 'on-first-retry',
     screenshot: 'only-on-failure',
-    video: 'retain-on-failure',
+    video: process.env.CI ? 'retain-on-failure' : 'on',
+    trace: process.env.CI ? 'retain-on-failure' : 'on',
   },
-  // reporter: [['dot']],
-  // reporter: [['dot'], ['json', { outputFile: 'test-results.json' }]],
+  reporter: [['html', { open: 'always' }], ['line']],
   projects: [
-    {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
-    },
+    { name: 'chromium', use: { ...devices['Desktop Chrome'] } },
+    // { name: 'webkit', use: { ...devices['Desktop Safari'] } },
     /* {
       name: 'firefox',
       use: { ...devices['Desktop Firefox'] },
-    },
-    {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
     },  */
   ],
-};
-export default config;
+});
